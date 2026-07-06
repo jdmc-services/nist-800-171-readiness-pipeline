@@ -1,0 +1,27 @@
+# ---- Data privacy boundary: client-derived artifacts NEVER enter git ----
+compliance_db/
+config.json
+cleaned_config.json
+data/
+!samples/sample_config.json
+
+# ---- Environment & secrets ----
+.env
+.env.*
+*.pem
+*.key
+.streamlit/secrets.toml
+
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

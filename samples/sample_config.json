@@ -1,0 +1,33 @@
+{
+  "organization": "Sample Defense Subcontractor LLC",
+  "identity": {
+    "mfa_enforced": true,
+    "mfa_scope": "all privileged accounts and remote network access",
+    "password_policy": "14 character minimum with complexity rules enforced",
+    "password_storage": "passwords stored as salted bcrypt hashes",
+    "admin_api_key": "AKIAIOSFODNN7EXAMPLE"
+  },
+  "access_control": {
+    "least_privilege_model": "role-based access with quarterly entitlement reviews",
+    "session_lock_minutes": 15,
+    "remote_access": "VPN with monitored and logged sessions"
+  },
+  "logging": {
+    "siem": "centralized audit log retention for 12 months",
+    "user_attribution": "unique user IDs required, shared accounts disabled"
+  },
+  "network": {
+    "dmz": "public web servers logically separated in DMZ subnet",
+    "encryption_in_transit": "TLS 1.2+ enforced for all CUI transmission",
+    "encryption_at_rest": "BitLocker full disk encryption on all endpoints",
+    "db_connection": "postgres://svc_account:SuperSecret99@db.internal:5432/app"
+  },
+  "vulnerability_management": {
+    "scanning": "authenticated Nessus scans weekly",
+    "patching_sla": "critical vulnerabilities remediated within 14 days"
+  },
+  "incident_response": {
+    "plan": "documented IR plan with containment and recovery phases",
+    "reporting": "incidents reported to designated officials within 72 hours"
+  }
+}
