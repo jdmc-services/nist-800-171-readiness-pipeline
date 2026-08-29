@@ -1,18 +1,14 @@
 # Siloed Orchestration: Private Compliance Intelligence Pipeline
 
-A production-grade architectural blueprint for **fully local, zero-egress AI
-automation** in regulated environments. This repository implements a NIST SP
-800-171 Rev 2 readiness gap-analysis pipeline (full 110-requirement corpus,
-the current CMMC Level 2 assessment baseline) as a reference pattern for
-private corporate automation and multi-agent systems: deterministic
-sanitization at the perimeter, embedding-based knowledge retrieval, and
-constrained local LLM artifact generation - with no external API dependency
-at any layer.
+A reference implementation and architectural blueprint for **fully local, zero-egress AI automation** in regulated environments. This repository demonstrates a NIST SP 800-171 Revision 2 readiness gap-analysis pipeline using the complete 110-requirement corpus currently incorporated into the CMMC Level 2 assessment model.
 
-> **Scope note:** This tool performs readiness gap analysis. It is not a
-> substitute for a CMMC C3PAO assessment or an official SPRS self-assessment.
-> CMMC currently assesses against NIST SP 800-171 Revision 2 per DoD class
-> deviation; Rev 3 is not yet authorized for CMMC or SPRS scoring.
+The design combines deterministic sanitization, embedding-based knowledge retrieval, constrained local language-model generation, and auditable file handoffs without requiring an external AI API.
+
+
+> > **Scope and standards note:** This repository provides an educational readiness-analysis reference implementation. It does not perform an official CMMC assessment, create a CMMC certification, calculate an authoritative SPRS score, or replace legal, contractual, compliance, or C3PAO guidance.
+>
+> As of August 2026, the CMMC Level 2 model incorporates the 110 requirements from NIST SP 800-171 Revision 2. NIST has published Revision 3, but users must verify the requirements stated in their applicable solicitation, contract, regulation, and current Department of Defense guidance before relying on any assessment baseline.
+
 
 ## Architecture
 
@@ -116,11 +112,22 @@ persistent Python processes like Streamlit. Use the public site purely as the
 Cloudflare-Access-protected portal URL. Presentation on the web, computation
 in the silo.
 
-## Privacy Boundaries
+## Privacy and Source-Control Boundaries
 
-`.gitignore` blacklists `compliance_db/`, `config.json`,
-`cleaned_config.json`, all `data/` artifacts, and environment files. Client-
-derived material can never enter source control.
+The `.gitignore` configuration excludes the local compliance database, configuration files, sanitized working files, generated data artifacts, environment files, and other designated runtime content from normal Git tracking.
+
+A `.gitignore` file reduces the risk of accidental inclusion, but it is not a security control that guarantees sensitive material cannot enter source control. Users should also:
+
+* Inspect staged files before every commit
+* Use synthetic data for demonstrations and testing
+* Scan commits for credentials, secrets, regulated data, and client identifiers
+* Protect branches and require peer review where appropriate
+* Store secrets in an approved secrets-management system
+* Remove sensitive information before processing
+* Maintain separate environments for public demonstrations and client work
+
+No employer, client, student, patient, or production-derived information should be placed in this public repository.
+
 
 ## Extending
 
@@ -129,3 +136,17 @@ derived material can never enter source control.
 - Swap `llama3` for any Ollama-served model via `GEN_MODEL`.
 - Point the same pattern at other frameworks (CIS, HIPAA Security Rule, ISO
   27001) by replacing the control corpus.
+
+  ## Privacy and Independence Statement
+
+This is an independently developed educational and architectural project. It contains synthetic examples and generalized security patterns. It does not contain confidential employer information, proprietary client documentation, controlled unclassified information, or operational data from any organization.
+
+The views and materials presented here are those of the author and do not represent any employer, client, educational institution, government agency, assessor, or certification body.
+
+## Author
+
+**James D. McClain, MBA**
+
+Enterprise AI | Secure Infrastructure | Cybersecurity Governance | Zero Trust | Workforce Transformation
+
+[View the complete GitHub portfolio](https://github.com/jdmc-services)
