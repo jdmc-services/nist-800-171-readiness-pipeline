@@ -112,7 +112,7 @@ persistent Python processes like Streamlit. Use the public site purely as the
 Cloudflare-Access-protected portal URL. Presentation on the web, computation
 in the silo.
 
-## Privacy and Source-Control Boundaries
+##Privacy and Source-Control Boundaries
 
 The `.gitignore` configuration excludes the local compliance database, configuration files, sanitized working files, generated data artifacts, environment files, and other designated runtime content from normal Git tracking.
 
