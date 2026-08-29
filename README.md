@@ -5,7 +5,7 @@ A reference implementation and architectural blueprint for **fully local, zero-e
 The design combines deterministic sanitization, embedding-based knowledge retrieval, constrained local language-model generation, and auditable file handoffs without requiring an external AI API.
 
 
-> **Scope and standards note:**This repository provides an educational readiness-analysis reference implementation. It does not perform an official CMMC assessment, create a CMMC certification, calculate an authoritative SPRS score, or replace legal, contractual, compliance, or C3PAO guidance.
+> **Scope and standards note:** This repository provides an educational readiness-analysis reference implementation. It does not perform an official CMMC assessment, create a CMMC certification, calculate an authoritative SPRS score, or replace legal, contractual, compliance, or C3PAO guidance.
 >
 > As of August 2026, the CMMC Level 2 model incorporates the 110 requirements from NIST SP 800-171 Revision 2. NIST has published Revision 3, but users must verify the requirements stated in their applicable solicitation, contract, regulation, and current Department of Defense guidance before relying on any assessment baseline.
 
@@ -112,7 +112,7 @@ persistent Python processes like Streamlit. Use the public site purely as the
 Cloudflare-Access-protected portal URL. Presentation on the web, computation
 in the silo.
 
-#Privacy and Independence Statement
+## Privacy and Independence Statement
 
 The `.gitignore` configuration excludes the local compliance database, configuration files, sanitized working files, generated data artifacts, environment files, and other designated runtime content from normal Git tracking.
 
